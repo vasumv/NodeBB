@@ -24,5 +24,7 @@ ENV NODE_ENV=production \
 
 EXPOSE 4567
 
+COPY --chown=node:node create_config.sh create_config.sh
+
 CMD  ./create_config.sh -n "${SETUP}" && ./nodebb setup || node ./nodebb build; node ./nodebb start
 
