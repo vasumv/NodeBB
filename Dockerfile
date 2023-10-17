@@ -27,5 +27,5 @@ EXPOSE 4567
 COPY --chown=node:node create_config.sh /usr/src/app/create_config.sh
 COPY --chown=node:node config_template.json /usr/src/app/config_template.json
 
-CMD  ./usr/src/app/create_config.sh -n "${SETUP}" && ./nodebb setup || node ./nodebb build; node ./nodebb start
+CMD  /usr/src/app/create_config.sh -n "${SETUP}" && ./nodebb setup || node ./nodebb build; node ./nodebb start
 
